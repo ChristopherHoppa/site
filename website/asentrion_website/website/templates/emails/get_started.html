@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Asentrion | Project Request Received
+    </title>
+
+</head>
+
+
+<body
+    style="
+        margin:0;
+        padding:0;
+        background:#07131f;
+    "
+>
+
+
+<table
+    role="presentation"
+    width="100%"
+    cellpadding="0"
+    cellspacing="0"
+    border="0"
+    style="
+        width:100%;
+        margin:0;
+        padding:0;
+        background:#07131f;
+    "
+>
+
+
+<tr>
+
+    <td
+        align="center"
+        style="
+            padding:42px 18px;
+        "
+    >
+
+&nbsp; · &nbsp;
+        <!-- =================================================
+             EMAIL CONTAINER
+        ================================================== -->
+
+        <table
+            role="presentation"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="
+                width:100%;
+                max-width:680px;
+                margin:0 auto;
+                background:#0a1928;
+                border:1px solid #294052;
+                border-collapse:separate;
+            "
+        >
+
+
+            <!-- =============================================
+                 LOGO
+            ============================================== -->
+
+            <tr>
+
+                <td
+                    align="center"
+                    style="
+                        padding:36px 30px 30px;
+                        background:#07131f;
+                        border-bottom:1px solid #294052;
+                    "
+                >
+
+                    <img
+                        src="{{ logo_url }}"
+                        alt="Asentrion"
+                        width="270"
+                        style="
+                            display:block;
+                            width:270px;
+                            max-width:82%;
+                            height:auto;
+                            margin:0 auto;
+                            padding:0;
+                            border:0;
+                            outline:none;
+                            text-decoration:none;
+                        "
+                    >
+
+                </td>
+
+            </tr>
+
+
+
+            <!-- =============================================
+                 MESSAGE HEADER
+            ============================================== -->
+
+            <tr>
+
+                <td
+                    style="
+                        padding:38px 38px 20px;
+                    "
+                >
+
+
+                    
+
+
+                    <h1
+                        style="
+                            margin:0 0 18px;
+                            padding:0;
+                            color:#ffffff;
+                            font-family:Arial, Helvetica, sans-serif;
+                            font-size:31px;
+                            font-weight:600;
+                            line-height:1.15;
+                            letter-spacing:-0.6px;
+                        "
+                    >
+                        Thank you for your request
+                    </h1>
+
+
+                  
+
+
+                </td>
+
+            </tr>
+
+            <!-- =============================================
+                 SUMMARY
+            ============================================== -->
+
+            <tr>
+
+                <td
+                    style="
+                        padding:24px 38px 38px;
+                    "
+                >
+
+
+                    <div
+                        style="
+                            margin:0 0 15px;
+                            color:#ffffff;
+                            font-family:'Courier New', Courier, monospace;
+                            font-size:10px;
+                            font-weight:bold;
+                            letter-spacing:1.6px;
+                            text-transform:uppercase;
+                        "
+                    >
+                        REQUEST SUMMARY
+                    </div>
+
+
+
+                    <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                        style="
+                            width:100%;
+                            border-top:1px solid #294052;
+                        "
+                    >
+
+
+                        <!-- NAME -->
+
+                        <tr>
+
+                            <td
+                                width="165"
+                                style="
+                                    width:165px;
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    line-height:1.5;
+                                    vertical-align:top;
+                                "
+                            >
+                                Name
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    line-height:1.5;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ full_name }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ORGANIZATION -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Organization
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ organization|default:"Not provided" }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- EMAIL -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Email
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    vertical-align:top;
+                                    word-break:break-word;
+                                "
+                            >
+                                {{ email }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- PHONE -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Phone
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ phone|default:"Not provided" }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- SERVICE -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Project type
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#ffffff;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    font-weight:bold;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ service }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- CONTACT METHOD -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Preferred contact
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ preferred_contact|default:"Not provided" }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- TIMELINE -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Timeline
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ timeline|default:"Not provided" }}
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- BUDGET -->
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#718696;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:12px;
+                                    vertical-align:top;
+                                "
+                            >
+                                Budget
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding:13px 0;
+                                    border-bottom:1px solid #294052;
+                                    color:#dce4eb;
+                                    font-family:Arial, Helvetica, sans-serif;
+                                    font-size:13px;
+                                    vertical-align:top;
+                                "
+                            >
+                                {{ budget|default:"Not provided" }}
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+
+
+
+                    <!-- =========================================
+                         PROJECT DETAILS
+                    ========================================== -->
+
+                    <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                        style="
+                            width:100%;
+                            margin-top:28px;
+                            background:#07131f;
+                            border:1px solid #294052;
+                        "
+                    >
+
+                        <tr>
+
+                            <td
+                                style="
+                                    padding:20px;
+                                "
+                            >
+
+                                <div
+                                    style="
+                                        margin:0 0 11px;
+                                        color:#718696;
+                                        font-family:'Courier New', Courier, monospace;
+                                        font-size:9px;
+                                        font-weight:bold;
+                                        letter-spacing:1.5px;
+                                        text-transform:uppercase;
+                                    "
+                                >
+                                    PROJECT DETAILS
+                                </div>
+
+
+                                <div
+                                    style="
+                                        color:#dce4eb;
+                                        font-family:Arial, Helvetica, sans-serif;
+                                        font-size:13px;
+                                        line-height:1.75;
+                                    "
+                                >
+                                    {{ details|linebreaksbr }}
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+
+
+                    <!-- =========================================
+                         NEXT STEP
+                    ========================================== -->
+
+                    <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                        style="
+                            width:100%;
+                            margin-top:30px;
+                        "
+                    >
+
+                        <tr>
+
+                            <td
+                                width="2"
+                                style="
+                                    width:2px;
+                                    background:#ffffff;
+                                    font-size:0;
+                                    line-height:0;
+                                "
+                            >
+                                &nbsp;
+                            </td>
+
+
+                            <td
+                                style="
+                                    padding-left:17px;
+                                "
+                            >
+
+                                <div
+                                    style="
+                                        margin:0 0 8px;
+                                        color:#ffffff;
+                                        font-family:Arial, Helvetica, sans-serif;
+                                        font-size:14px;
+                                        font-weight:bold;
+                                    "
+                                >
+                                    What happens next
+                                </div>
+
+
+                                <div
+                                    style="
+                                        color:#91a1af;
+                                        font-family:Arial, Helvetica, sans-serif;
+                                        font-size:13px;
+                                        line-height:1.7;
+                                    "
+                                >
+                                    We will review the project, scope and
+                                    information you sent. If anything needs
+                                    clarification, We will reach out using your
+                                    preferred contact method.
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+
+                </td>
+
+            </tr>
+
+
+
+            <!-- =============================================
+                 COURIER FOOTER
+            ============================================== -->
+
+            <tr>
+
+                <td
+                    style="
+                        padding:26px 38px;
+                        background:#06111c;
+                        border-top:1px solid #294052;
+                    "
+                >
+
+
+                    <table
+                        role="presentation"
+                        width="100%"
+                        cellpadding="0"
+                        cellspacing="0"
+                        border="0"
+                    >
+
+                        <tr>
+
+                        
+
+                            <td
+                                align="right"
+                                style="
+                                    color:#526b7d;
+                                    font-family:'Courier New', Courier, monospace;
+                                    font-size:9px;
+                                    letter-spacing:1px;
+                                    white-space:nowrap;
+                                "
+                            >
+                                SIGNAL COMPLETE
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+
+                    <div
+                        style="
+                            margin-top:16px;
+                            color:#526b7d;
+                            font-family:'Courier New', Courier, monospace;
+                            font-size:9px;
+                            line-height:1.7;
+                            letter-spacing:1px;
+                        "
+                    >
+                        
+                        Technology · Design · Innovation
+                    </div>
+
+
+                </td>
+
+            </tr>
+
+
+        </table>
+
+
+    </td>
+
+</tr>
+
+
+</table>
+
+
+</body>
+
+</html>

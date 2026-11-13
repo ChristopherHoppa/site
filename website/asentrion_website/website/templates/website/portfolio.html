@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Portfolio | Asentrion
+</title>
+
+<meta
+    name="description"
+    content="Selected software, web, infrastructure and digital projects by Asentrion."
+>
+
+<link rel="stylesheet" href="{% static 'website/css/portfolio.css' %}">
+
+</head>
+
+<body>
+
+<div class="cad-background"></div>
+<div class="dock-sentinel" id="dockSentinel" aria-hidden="true"></div>
+
+
+<!-- ======================================================
+     FLOATING BRAND
+======================================================= -->
+
+<a
+    href="{% url 'home' %}"
+    class="floating-logo"
+    aria-label="Asentrion home"
+>
+    <img
+        src="{% static 'website/images/asentrion-3.png' %}"
+        alt="Asentrion"
+    >
+</a>
+
+
+<!-- ======================================================
+     DESKTOP SIDEBAR
+======================================================= -->
+
+<aside class="sidebar">
+
+
+    <nav class="sidebar-nav">
+
+        <a href="{% url 'home' %}#home">
+            Home
+        </a>
+
+        <a href="{% url 'home' %}#services">
+            Services
+        </a>
+
+        <a href="{% url 'home' %}#about">
+            About
+        </a>
+
+        <a href="{% url 'home' %}#contact">
+            Get started
+        </a>
+
+        <a href="{% url 'home' %}#collaborate">
+            Collaborate
+        </a>
+
+    </nav>
+
+    <a
+        href="#portfolio"
+        class="sidebar-portfolio active"
+    >
+        Portfolio
+    </a>
+
+    <div class="sidebar-footer">
+
+        Charlotte, North Carolina
+
+        <br>
+
+        <strong>
+            Technology · Design · Innovation
+        </strong>
+
+    </div>
+
+</aside>
+
+
+<!-- ======================================================
+     MOBILE NAV
+======================================================= -->
+
+<div class="mobile-nav">
+
+    <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div
+        class="mobile-links"
+        id="mobileLinks"
+    >
+
+        <a href="{% url 'home' %}#home">Home</a>
+        <a href="{% url 'home' %}#services">Services</a>
+        <a href="{% url 'home' %}#about">About</a>
+        <a href="{% url 'home' %}#contact">Get started</a>
+        <a href="{% url 'home' %}#collaborate">Collaborate</a>
+        <a href="#portfolio">Portfolio</a>
+
+    </div>
+
+</div>
+
+
+<!-- ======================================================
+     HERO
+======================================================= -->
+
+<header class="portfolio-hero" id="portfolio">
+
+    <div class="hero-inner">
+
+
+        <h1>
+             Ideas put to work 
+        </h1>
+
+        <p>
+            A running record of software, web, infrastructure
+            and digital projects built through Asentrion.
+            A selection of client work, technical experiments,
+            and projects taking shape. Live work is linked;
+            upcoming ideas are clearly marked.
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- ======================================================
+     PORTFOLIO FEED
+======================================================= -->
+
+<main class="portfolio-main">
+    <!-- PROJECT 01 / LIVE -->
+    <article class="portfolio-post reveal-on-scroll" id="charlotte-black-car" data-project="cbcs">
+        <div class="post-index"></div>
+        <div class="post-body">
+            <div class="post-meta">
+                
+                <span class="status-pill status-live">Live website</span>
+            </div>
+            <h3>Charlotte Black Car Service</h3>
+            <p class="post-summary">
+              A website developed for a Charlotte-based transportation company, supported by ongoing technical 
+              maintenance and improvements. The project emphasizes a professional presentation and reliable customer 
+              communication, as well as mobile accessibility and secure hosting.
+            </p>
+            <div class="post-tech">
+                <span>Django</span><span>HTML / CSS / JS</span><span>Nginx</span>
+                <span>DNS</span><span>Forms</span>
+            </div>
+            <a class="project-link" href="https://charlotteblackcarservice.com/" target="_blank" rel="noopener noreferrer">
+                Visit live website <span aria-hidden="true">↗</span>
+            </a>
+            <button class="post-toggle" type="button" aria-controls="details-cbcs" aria-expanded="false">
+                View project notes <span aria-hidden="true">+</span>
+            </button>
+            <div class="post-details" id="details-cbcs" aria-hidden="true">
+                <div class="detail-grid">
+                    <div><span class="detail-label">Contribution</span><p>Website implementation and refinement, deployment, form and email handling, and technical maintenance.</p></div>
+                    <div><span class="detail-label">Emphasis</span><p>Trust-oriented copy, responsive UI, clear service information, and practical security controls.</p></div>
+                </div>
+            </div>
+        </div>
+        <a class="post-visual cbcs-visual cbcs-project-link" href="https://charlotteblackcarservice.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Charlotte Black Car Service website">
+            <div class="cbcs-photo-frame">
+                <video autoplay muted loop playsinline preload="auto" aria-label="Charlotte Black Car Service video showcase">
+                    <source src="{% static 'website/videos/cbcs-portfolio.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+        </a>
+    </article>
+
+    <!-- PROJECT 02 / IDEA -->
+    <article class="portfolio-post reveal-on-scroll" id="irl-loading-tips" data-project="irl-loading-tips">
+        <div class="post-index"></div>
+        <div class="post-body">
+            <div class="post-meta">
+            </div>
+            <h3>Loading Reality</h3>
+            <p class="post-summary">
+              A creative social media project that brings video 
+              game-style loading screen tips into everyday life 
+              through short-form content. Developed to showcase 
+              original content creation and branding, while exploring
+               ways to establish a recognizable identity and build a presence across the social media landscape.
+            </p>
+            <div class="post-tech">
+                <span>Instagram Reels</span><span>Short-form video</span>
+                <span>Branding</span><span>Content strategy</span>
+            </div>
+            <span class="project-coming" aria-label="Coming soon">Project not launched yet</span>
+            <button class="post-toggle" type="button" aria-controls="details-irl" aria-expanded="false">
+                View project notes <span aria-hidden="true">+</span>
+            </button>
+            <div class="post-details" id="details-irl" aria-hidden="true">
+                <div class="detail-grid">
+                    <div><span class="detail-label">Format</span><p>Repeatable, recognizable micro-videos formatted like game loading screens.</p></div>
+                    <div><span class="detail-label">Portfolio goal</span><p>Demonstrate scripting, editing, visual identity, publishing discipline, and audience testing once launched.</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="post-visual cbcs-visual" aria-label="Loading Reality video showcase">
+            <div class="cbcs-photo-frame">
+                <video autoplay muted loop playsinline preload="auto" aria-label="Loading Reality portfolio video showcase">
+                    <source src="{% static 'website/videos/lr-portfolio.mp4' %}" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </article>
+
+    <!-- PROJECT 03 / PLANNED -->
+    <article class="portfolio-post reveal-on-scroll" id="five-grounds-dns" data-project="five-grounds-dns">
+        <div class="post-index"></div>
+        <div class="post-body">
+            {% comment %} <div class="post-meta">
+                <span>Cloud &amp; network services</span><span>Concept</span>
+                <span class="status-pill status-upcoming">Coming soon</span>
+            </div> {% endcomment %}
+            <h3>Five Grounds</h3>
+            <p class="post-summary">
+                A proposed cloud-hosted DNS filtering service, accessed through a
+                private VPN connection. The goal is to make network-level domain
+                blocking practical without requiring customers to maintain
+                their own home server.
+            </p>
+            <div class="post-tech">
+                <span>DNS</span><span>VPN</span><span>Linux</span>
+                <span>AWS</span><span>Security</span>
+            </div>
+            <span class="project-coming" aria-label="Coming soon">Service not available yet</span>
+            <button class="post-toggle" type="button" aria-controls="details-dns" aria-expanded="false">
+                View project notes <span aria-hidden="true">+</span>
+            </button>
+            <div class="post-details" id="details-dns" aria-hidden="true">
+                <div class="detail-grid">
+                    <div><span class="detail-label">Proposed architecture</span><p>Private VPN access to DNS resolvers and sinkhole rules hosted on cloud infrastructure.</p></div>
+                    <div><span class="detail-label">Work ahead</span><p>Validate security boundaries, operating costs, multi-user isolation, failover, and support requirements before offering access.</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="post-visual dns-visual" aria-label="Illustration of a planned DNS filtering network">
+            <div class="visual-header"><span>NETWORK / CONCEPT</span><span>ARCHITECTURE STUDY</span></div>
+            <div class="dns-window">
+                <div class="dns-heading">FIVE GROUNDS <small>DNS / 01</small></div>
+                <div class="dns-flow"><div class="dns-node"><b>01</b><strong>DEVICE</strong><small>Client</small></div><span class="dns-connector">⟶</span><div class="dns-node"><b>02</b><strong>VPN</strong><small>Private access</small></div><span class="dns-connector">⟶</span><div class="dns-node"><b>03</b><strong>DNS</strong><small>Filter</small></div></div>
+                <div class="dns-log"><span>&gt; REQUEST / example.invalid</span><span>&gt; RULE EVALUATION</span><span>&gt; RESPONSE / POLICY</span></div>
+                <span class="preview-ribbon">COMING SOON</span>
+            </div>
+        </div>
+    </article>
+
+    <!-- PROJECT 04 / PROTOTYPE -->
+    <article class="portfolio-post reveal-on-scroll" id="vision" data-project="vision">
+        <div class="post-index">04</div>
+        <div class="post-body">
+            <div class="post-meta">
+                <span>Internal product / client feedback</span><span>2026</span>
+                <span class="status-pill status-development">In development</span>
+            </div>
+            <h3>Asentrion VISION</h3>
+            <p class="post-summary">
+                A browser overlay for collecting feedback during private client
+                website previews. Visitors can mark interface elements and leave
+                comments in context instead of describing changes through
+                long email threads.
+            </p>
+            <div class="post-tech">
+                <span>JavaScript</span><span>Django REST Framework</span>
+                <span>JSON</span><span>Client workflow</span>
+            </div>
+            <span class="project-coming">Prototype / private use</span>
+            <button class="post-toggle" type="button" aria-controls="details-vision" aria-expanded="false">
+                View project notes <span aria-hidden="true">+</span>
+            </button>
+            <div class="post-details" id="details-vision" aria-hidden="true">
+                <div class="detail-grid">
+                    <div><span class="detail-label">Prototype</span><p>Element-anchored notes in a preview environment, with feedback export as structured data.</p></div>
+                    <div><span class="detail-label">Roadmap</span><p>Centralized API intake and optional ticket routing as the workflow matures. Not publicly launched.</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="post-visual vision-visual" aria-label="Illustrative preview of Asentrion VISION client feedback overlay">
+            <div class="visual-header"><span>VISION / CLIENT PREVIEW</span><span>PROTOTYPE</span></div>
+            <div class="vision-window">
+                <div class="vision-toolbar">ASENTRION VISION / REVIEW</div>
+                <div class="mock-layout"><div class="mock-media"></div><div class="mock-copy"><i></i><i></i><i></i></div></div>
+                <div class="comment-pin pin-one"></div><div class="comment-pin pin-two"></div>
+                <div class="comment-box comment-one">Reduce copy here</div>
+                <div class="comment-box comment-two">Replace image</div>
+            </div>
+        </div>
+    </article>
+
+    <section class="portfolio-cta reveal-on-scroll">
+        <h2>How can we help?</h2>
+        <p>Need a website, custom tool, or technical assistance? Tell us what you're trying to accomplish and we'll work from there.</p>
+        <a href="{% url 'home' %}#contact" class="cta-button">Start a project ↗</a>
+    </section>
+</main>
+<!-- ======================================================
+     FOOTER
+======================================================= -->
+
+<footer class="output-footer">
+
+    <div class="footer-inner">
+
+        
+
+        <a
+            href="{% url 'home' %}"
+            class="footer-brand"
+        >
+            <img
+                src="{% static 'website/images/asentrion-3.png' %}"
+                alt="Asentrion"
+            >
+        </a>
+
+        <div class="footer-tagline">
+            Technology · Design · Innovation
+        </div>
+
+        <div class="footer-copyright">
+            © 2026 ASENTRION
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="{% static 'website/js/portfolio.js' %}" defer></script>
+
+</body>
+</html>

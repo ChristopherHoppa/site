@@ -1,0 +1,3306 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Asentrion | Technology · Design · Innovation
+</title>
+
+<meta
+    name="description"
+    content="Asentrion builds practical software, websites, digital solutions and technical systems for businesses and individuals."
+>
+
+
+<link rel="stylesheet" href="{% static 'website/css/styles.css' %}">
+
+<!-- ASENTRION / SUBMISSION SUCCESS NOTIFICATION -->
+<style>
+    .submission-toast {
+        position: fixed;
+        top: max(22px, env(safe-area-inset-top, 0px));
+        left: 50%;
+        z-index: 2147483000;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        box-sizing: border-box;
+        width: max-content;
+        max-width: calc(100vw - 32px);
+        padding: 15px 21px;
+        border: 1px solid #29875e;
+        border-radius: 12px;
+        background: #0b2019;
+        box-shadow: 0 15px 45px rgba(0, 0, 0, .3);
+        color: #e3ffed;
+        font-family: Arial, Helvetica, sans-serif;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translate(-50%, -20px);
+        transition: opacity .45s ease,
+                    visibility .45s ease,
+                    transform .65s cubic-bezier(.2, .8, .2, 1);
+    }
+
+    .submission-toast.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+
+    .submission-toast-icon {
+        display: grid;
+        flex: 0 0 42px;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #17623e;
+        color: #ffffff;
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    .submission-toast-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        min-width: 0;
+        line-height: 1.4;
+    }
+
+    .submission-toast-content strong {
+        color: #e3ffed;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .submission-toast-content span {
+        color: #a8d9bc;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .submission-toast {
+            transition: none;
+        }
+    }
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<div class="cad-background"></div>
+<div class="dock-sentinel" id="dockSentinel" aria-hidden="true"></div>
+
+
+
+<!-- =======================================================
+     BACKGROUND SCHEMATIC
+======================================================= -->
+
+<div
+    class="schematic-background"
+    id="schematicBackground"
+>
+
+<svg
+    viewBox="0 0 1600 7600"
+    preserveAspectRatio="none"
+>
+
+
+    <path
+        id="masterCircuit"
+        class="sch-wire"
+    />
+<!-- INPUT -->
+
+    <g
+        class="scroll-component section-signal"
+        data-target="home"
+        data-base-y="300"
+    >
+        <!-- INPUT housing removed so the hero logo stays unobstructed.
+             Keep the home signal group for existing script compatibility. -->
+    </g>
+
+
+
+    <!-- AND -->
+
+    <g
+        class="scroll-component section-signal"
+        data-target="services"
+        data-base-y="620"
+    >
+
+        <path
+            class="sch-component"
+            d="
+                M1060 555
+                L1110 555
+                C1175 555 1215 580 1215 620
+                C1215 660 1175 685 1110 685
+                L1060 685
+                Z
+            "
+        />
+
+        <rect
+            class="power-body"
+            x="1059"
+            y="554"
+            width="155"
+            height="132"
+            rx="5"
+        />
+
+    </g>
+
+
+
+    <!-- TEST POINT -->
+
+    <g
+        class="scroll-junction decorative-component"
+        data-position=".21"
+    >
+
+        <circle
+            class="sch-testpoint"
+            cx="1320"
+            cy="1100"
+            r="11"
+        />
+
+        <circle
+            class="power-junction"
+            cx="1320"
+            cy="1100"
+            r="8"
+        />
+
+    </g>
+
+
+
+    <!-- INVERTER -->
+
+    <g
+        class="scroll-component decorative-component"
+        data-position=".29"
+    >
+
+        <path
+            class="sch-component"
+            d="
+                M1040 1355
+                L1040 1485
+                L1160 1420
+                Z
+            "
+        />
+
+        <circle
+            class="sch-component"
+            cx="1177"
+            cy="1420"
+            r="14"
+        />
+
+        <text
+            class="sch-label"
+            x="1056"
+            y="1515"
+        >
+            74HC14
+        </text>
+
+        <path
+            class="power-body"
+            d="
+                M1040 1355
+                L1040 1485
+                L1160 1420
+                Z
+            "
+        />
+
+    </g>
+
+
+
+    <!-- OR -->
+
+    <g
+        class="scroll-component section-signal"
+        data-target="about"
+        data-base-y="2280"
+    >
+
+        <path
+            class="sch-component"
+            d="
+                M1050 2190
+                C1110 2210 1160 2215 1230 2280
+                C1160 2345 1110 2350 1050 2370
+                C1080 2320 1080 2240 1050 2190
+                Z
+            "
+        />
+
+        <path
+            class="power-body"
+            d="
+                M1050 2190
+                C1110 2210 1160 2215 1230 2280
+                C1160 2345 1110 2350 1050 2370
+                C1080 2320 1080 2240 1050 2190
+                Z
+            "
+        />
+
+    </g>
+
+
+
+    <!-- CAPACITOR -->
+
+    <g
+        class="scroll-component decorative-component"
+        data-position=".48"
+    >
+
+        <line
+            class="sch-component"
+            x1="1138"
+            y1="3350"
+            x2="1208"
+            y2="3350"
+        />
+
+        <line
+            class="sch-component"
+            x1="1138"
+            y1="3378"
+            x2="1208"
+            y2="3378"
+        />
+
+        <text
+            class="sch-ref"
+            x="1220"
+            y="3356"
+        >
+            C4
+        </text>
+
+    </g>
+
+
+
+    <!-- XOR -->
+
+    <g
+        class="scroll-component decorative-component"
+        data-position=".58"
+    >
+
+        <path
+            class="sch-component"
+            d="
+                M1070 3990
+                C1130 4010 1180 4015 1250 4100
+                C1180 4185 1130 4190 1070 4210
+                C1100 4150 1100 4050 1070 3990
+                Z
+            "
+        />
+
+        <text
+            class="sch-ref"
+            x="1100"
+            y="3970"
+        >
+            U4A
+        </text>
+
+        <text
+            class="sch-label"
+            x="1110"
+            y="4106"
+        >
+            74HC86
+        </text>
+
+        <path
+            class="power-body"
+            d="
+                M1070 3990
+                C1130 4010 1180 4015 1250 4100
+                C1180 4185 1130 4190 1070 4210
+                C1100 4150 1100 4050 1070 3990
+                Z
+            "
+        />
+
+    </g>
+
+
+
+    <!-- NAND -->
+
+    <g
+        class="scroll-component section-signal"
+        data-target="contact"
+        data-base-y="5050"
+    >
+
+        <path
+            class="sch-component"
+            d="
+                M1040 4970
+                L1090 4970
+                C1150 4970 1190 5000 1190 5050
+                C1190 5100 1150 5130 1090 5130
+                L1040 5130
+                Z
+            "
+        />
+
+        <circle
+            class="sch-component"
+            cx="1207"
+            cy="5050"
+            r="14"
+        />
+
+
+
+        <path
+            class="power-body"
+            d="
+                M1040 4970
+                L1090 4970
+                C1150 4970 1190 5000 1190 5050
+                C1190 5100 1150 5130 1090 5130
+                L1040 5130
+                Z
+            "
+        />
+
+    </g>
+
+
+
+    <!-- OUTPUT BUFFER -->
+
+    <g
+        class="scroll-component section-signal"
+        data-target="collaborate"
+        data-base-y="5950"
+    >
+
+        <path
+            class="sch-component"
+            d="
+                M1060 5890
+                L1060 6010
+                L1175 5950
+                Z
+            "
+        />
+
+        <path
+            class="power-body"
+            d="
+                M1060 5890
+                L1060 6010
+                L1175 5950
+                Z
+            "
+        />
+
+    </g>
+
+
+</svg>
+
+</div>
+
+
+
+<!-- =======================================================
+     FLOATING LOGO
+======================================================= -->
+
+<a
+    href="#home"
+    class="floating-logo"
+    id="floatingLogo"
+    aria-label="Asentrion home"
+>
+
+    <img
+        src="{% static 'website/images/asentrion-3.png' %}"
+        alt="Asentrion"
+    >
+
+</a>
+
+
+
+<!-- =======================================================
+     SIDEBAR
+======================================================= -->
+
+<aside class="sidebar">
+
+
+    <div class="sidebar-trace"></div>
+
+
+    <nav class="sidebar-nav">
+
+        <a
+            href="#home"
+            class="active"
+            data-section="home"
+        >
+            Home
+        </a>
+
+        <a
+            href="#services"
+            data-section="services"
+        >
+            Services
+        </a>
+
+        <a
+            href="#about"
+            data-section="about"
+        >
+            About
+        </a>
+
+        <a
+            href="#contact"
+            data-section="contact"
+        >
+            Get started
+        </a>
+
+        <a
+            href="#collaborate"
+            data-section="collaborate"
+        >
+            Collaborate
+        </a>
+
+    </nav>
+
+
+    <a
+        href="{% url 'portfolio' %}"
+        class="sidebar-portfolio"
+    >
+        View portfolio ↗
+    </a>
+
+
+    <div class="sidebar-footer">
+
+        Charlotte, North Carolina
+
+        <br>
+
+        <strong>
+            Technology · Design · Innovation
+        </strong>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =======================================================
+     MOBILE NAV
+======================================================= -->
+
+<div class="mobile-nav">
+
+
+    <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        aria-label="Open navigation"
+    >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </button>
+
+
+    <div
+        class="mobile-links"
+        id="mobileLinks"
+    >
+
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Get started</a>
+        <a href="#collaborate">Collaborate</a>
+        <a href="{% url 'portfolio' %}">Portfolio ↗</a>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =======================================================
+     HERO
+======================================================= -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+
+    <div class="hero-content">
+
+
+        <h1 class="hero-tagline">
+
+            Helping businesses and individuals
+            build strong digital solutions
+
+        </h1>
+
+
+        <p class="hero-sub">
+
+            Asentrion builds custom software,
+            websites, branding and practical technology
+            solutions for business and personal use.
+            The focus is simple: useful work, clean
+            execution and dependable results.
+
+        </p>
+
+
+        <div class="scroll-prompt">
+
+            Explore
+
+            <span></span>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     MAIN
+======================================================= -->
+
+<main class="site-content">
+
+
+
+<!-- =======================================================
+     SERVICES
+======================================================= -->
+
+<section
+    class="content-section"
+    id="services"
+>
+
+
+    <div class="content-inner">
+
+
+        <header class="section-heading">
+            <h2>
+                Built around real needs
+            </h2>
+
+
+            <p>
+
+                Asentrion provides practical digital
+                solutions across development, web,
+                support and technical problem-solving.
+                Projects are shaped around the goal rather
+                than forcing every client into the same
+                template or technology stack.
+
+            </p>
+
+
+        </header>
+
+
+
+        <div
+            class="services-stage"
+            id="servicesStage"
+        >
+
+
+            <!-- =============================================
+                 SERVICE CARD OVERVIEW
+            ============================================== -->
+
+            <div
+                class="services-overview"
+                id="servicesOverview"
+            >
+
+
+                <div class="services-grid">
+
+
+                    <button
+                        type="button"
+                        class="service-card"
+                        data-service="software"
+                        aria-controls="serviceDetails"
+                        aria-expanded="false"
+                    >
+
+                        <div class="pin-bank left">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="pin-bank right">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="card-reference">
+
+                            <strong>U10</strong>
+
+                            Development
+
+                        </div>
+
+                        <h3>
+                            Custom software
+                        </h3>
+
+                        <p>
+
+                            Purpose-built tools, applications,
+                            automation and internal systems
+                            designed around real workflows and
+                            business needs.
+
+                        </p>
+
+                        <span class="service-card-open">
+                            Explore specialty →
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="service-card"
+                        data-service="web"
+                        aria-controls="serviceDetails"
+                        aria-expanded="false"
+                    >
+
+                        <div class="pin-bank left">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="pin-bank right">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="card-reference">
+
+                            <strong>U11</strong>
+
+                            Web
+
+                        </div>
+
+                        <h3>
+                            Web development
+                        </h3>
+
+                        <p>
+
+                            Business websites, landing pages,
+                            redesigns and digital experiences
+                            built around usability, performance
+                            and professional presentation.
+
+                        </p>
+
+                        <span class="service-card-open">
+                            Explore specialty →
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="service-card"
+                        data-service="digital"
+                        aria-controls="serviceDetails"
+                        aria-expanded="false"
+                    >
+
+                        <div class="pin-bank left">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="pin-bank right">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="card-reference">
+
+                            <strong>U12</strong>
+
+                            Digital
+
+                        </div>
+
+                        <h3>
+                            Branding & digital presence
+                        </h3>
+
+                        <p>
+
+                            Design guidance, content structure
+                            and improvements to how a business,
+                            service or project presents itself
+                            online.
+
+                        </p>
+
+                        <span class="service-card-open">
+                            Explore specialty →
+                        </span>
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="service-card"
+                        data-service="support"
+                        aria-controls="serviceDetails"
+                        aria-expanded="false"
+                    >
+
+                        <div class="pin-bank left">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="pin-bank right">
+
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+                            <i class="pin"></i>
+
+                        </div>
+
+                        <div class="card-reference">
+
+                            <strong>U13</strong>
+
+                            Support
+
+                        </div>
+
+                        <h3>
+                            IT & technical support
+                        </h3>
+
+                        <p>
+
+                            Hands-on troubleshooting, system
+                            setup, technical support and practical
+                            guidance for everyday business and
+                            technology needs.
+
+                        </p>
+
+                        <span class="service-card-open">
+                            Explore specialty →
+                        </span>
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 SLIDE-IN SERVICE DETAIL
+            ============================================== -->
+
+            <div
+                class="service-detail-view"
+                id="serviceDetails"
+                aria-hidden="true"
+            >
+
+
+                <div class="service-detail-main">
+
+
+                    <button
+                        type="button"
+                        class="service-back"
+                        id="serviceBack"
+                    >
+                        ← Back to services
+                    </button>
+
+
+
+                    <!-- CUSTOM SOFTWARE -->
+
+                    <article
+                        class="service-detail is-active"
+                        data-service-detail="software"
+                    >
+
+                        <div class="service-detail-reference">
+                            U10 / DEVELOPMENT
+                        </div>
+
+                        <h3>
+                            Software built around the workflow
+                        </h3>
+
+                        <p class="service-detail-lead">
+
+                            Asentrion builds software for the parts
+                            of a business that do not fit cleanly into
+                            an off-the-shelf tool. The goal is not to
+                            add software for the sake of it. It is to
+                            remove friction, automate repetitive work
+                            and give people a system that fits how they
+                            actually operate.
+
+                        </p>
+
+                        <div class="service-detail-grid">
+
+                            <div class="service-detail-block">
+
+                                <span>Specialties</span>
+
+                                <strong>
+                                    Web applications · Internal tools ·
+                                    Workflow automation · REST APIs ·
+                                    Database-backed systems · Integrations
+                                </strong>
+
+                            </div>
+
+                            <div class="service-detail-block">
+
+                                <span>Typical stack</span>
+
+                                <strong>
+                                    Python · Django · Django REST Framework ·
+                                    PostgreSQL · JavaScript · AWS · Linux
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <p class="service-detail-copy">
+
+                            This can range from a focused internal utility
+                            to a larger application with authentication,
+                            APIs, data storage and deployment infrastructure.
+                            Architecture is chosen around the actual project
+                            instead of forcing every build into the same stack.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- WEB DEVELOPMENT -->
+
+                    <article
+                        class="service-detail"
+                        data-service-detail="web"
+                    >
+
+                        <div class="service-detail-reference">
+                            U11 / WEB
+                        </div>
+
+                        <h3>
+                            Websites treated like real systems
+                        </h3>
+
+                        <p class="service-detail-lead">
+
+                            Web work is built around the job the site needs
+                            to do: explain the business clearly, work across
+                            devices, load quickly and make the next action
+                            obvious. That can mean a custom Django build, a
+                            managed WordPress site or a focused static front end.
+
+                        </p>
+
+                        <div class="service-detail-grid">
+
+                            <div class="service-detail-block">
+
+                                <span>Specialties</span>
+
+                                <strong>
+                                    Custom websites · Redesigns · Responsive UI ·
+                                    Content architecture · Performance · SEO structure ·
+                                    Production deployment
+                                </strong>
+
+                            </div>
+
+                            <div class="service-detail-block">
+
+                                <span>Infrastructure</span>
+
+                                <strong>
+                                    Django · WordPress · Nginx · Gunicorn ·
+                                    Cloudflare · AWS · DNS · HTTPS
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <p class="service-detail-copy">
+
+                            The work does not stop at a mockup. Asentrion can
+                            handle the path from layout and content through
+                            hosting, DNS, SSL, forms and the production setup
+                            needed to actually keep the site online.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- DIGITAL PRESENCE -->
+
+                    <article
+                        class="service-detail"
+                        data-service-detail="digital"
+                    >
+
+                        <div class="service-detail-reference">
+                            U12 / DIGITAL
+                        </div>
+
+                        <h3>
+                            A cleaner digital presence around the business
+                        </h3>
+
+                        <p class="service-detail-lead">
+
+                            Not every problem needs a new application. Sometimes
+                            the real issue is that the business looks fragmented
+                            online. This work focuses on making the website, brand,
+                            content and supporting digital touchpoints feel like one
+                            deliberate system.
+
+                        </p>
+
+                        <div class="service-detail-grid">
+
+                            <div class="service-detail-block">
+
+                                <span>Specialties</span>
+
+                                <strong>
+                                    Visual direction · Site structure · Brand cleanup ·
+                                    Content organization · Digital consistency ·
+                                    Customer-facing workflows
+                                </strong>
+
+                            </div>
+
+                            <div class="service-detail-block">
+
+                                <span>Best fit</span>
+
+                                <strong>
+                                    Small businesses · New services · Existing brands ·
+                                    Technical products · Website modernization
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <p class="service-detail-copy">
+
+                            The emphasis is practical: tighten what already exists,
+                            identify what is missing and build a more consistent
+                            experience without turning the process into an unnecessary
+                            full-scale rebrand.
+
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- IT SUPPORT -->
+
+                    <article
+                        class="service-detail"
+                        data-service-detail="support"
+                    >
+
+                        <div class="service-detail-reference">
+                            U13 / SUPPORT
+                        </div>
+
+                        <h3>
+                            Practical support across systems and infrastructure
+                        </h3>
+
+                        <p class="service-detail-lead">
+
+                            Technical support is aimed at solving the actual issue
+                            and leaving the system in a better state afterward. That
+                            includes troubleshooting, configuration, deployment and
+                            helping businesses make sense of the infrastructure they
+                            already depend on.
+
+                        </p>
+
+                        <div class="service-detail-grid">
+
+                            <div class="service-detail-block">
+
+                                <span>Specialties</span>
+
+                                <strong>
+                                    Linux · Networking · DNS · Cloud systems ·
+                                    Web infrastructure · Troubleshooting ·
+                                    Security-minded configuration
+                                </strong>
+
+                            </div>
+
+                            <div class="service-detail-block">
+
+                                <span>Typical work</span>
+
+                                <strong>
+                                    Server setup · Site migrations · Network issues ·
+                                    Deployment support · Technical cleanup ·
+                                    General IT guidance
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <p class="service-detail-copy">
+
+                            This side of Asentrion is deliberately broad enough to
+                            cover the technical problems that sit between software,
+                            infrastructure and day-to-day IT instead of handing the
+                            client off every time the issue crosses a category.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- Right-side service menu remains visible -->
+
+                <nav
+                    class="service-detail-menu"
+                    aria-label="Service specialties"
+                >
+
+                    <div class="service-menu-label">
+                        SERVICES
+                    </div>
+
+                    <button
+                        type="button"
+                        class="service-menu-item is-active"
+                        data-service-menu="software"
+                    >
+
+                        <span>U10</span>
+                        Custom software
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-menu-item"
+                        data-service-menu="web"
+                    >
+
+                        <span>U11</span>
+                        Web development
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-menu-item"
+                        data-service-menu="digital"
+                    >
+
+                        <span>U12</span>
+                        Digital presence
+
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-menu-item"
+                        data-service-menu="support"
+                    >
+
+                        <span>U13</span>
+                        IT & technical support
+
+                    </button>
+
+                </nav>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="actions">
+
+            <a
+                href="#contact"
+                class="button primary"
+            >
+                Start a project
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     ABOUT
+======================================================= -->
+
+<section
+    class="content-section"
+    id="about"
+>
+
+
+    <div class="content-inner">
+
+
+        <header class="section-heading">
+
+            <h2>
+                Where purpose meets execution
+            </h2>
+
+
+            <p>
+
+                Asentrion builds practical,
+                high-quality technology with security
+                and reliability in mind from the start.
+                In today’s connected world, we believe
+                protecting the systems we build is part
+                of building them well.
+
+            </p>
+
+
+        </header>
+
+
+
+        <div class="process-layout">
+
+
+
+            <!-- =============================================
+                 PRINCIPLES
+            ============================================== -->
+
+            <div class="process-list">
+
+
+                <div class="process-row">
+
+                    <span class="process-number">
+                        01
+                    </span>
+
+                    <span class="process-title">
+                        Practical work
+                    </span>
+
+                    <span class="process-copy">
+
+                        Solve the actual problem without
+                        unnecessary complexity.
+
+                    </span>
+
+                </div>
+
+
+                <div class="process-row">
+
+                    <span class="process-number">
+                        02
+                    </span>
+
+                    <span class="process-title">
+                        Reliability
+                    </span>
+
+                    <span class="process-copy">
+
+                        Build systems that can be
+                        maintained, secured and supported.
+
+                    </span>
+
+                </div>
+
+
+                <div class="process-row">
+
+                    <span class="process-number">
+                        03
+                    </span>
+
+                    <span class="process-title">
+                        Iteration
+                    </span>
+
+                    <span class="process-copy">
+
+                        Test assumptions and improve what
+                        does not work.
+
+                    </span>
+
+                </div>
+
+
+                <div class="process-row">
+
+                    <span class="process-number">
+                        04
+                    </span>
+
+                    <span class="process-title">
+                        Delivery
+                    </span>
+
+                    <span class="process-copy">
+
+                        Move from planning to something
+                        people can actually use.
+
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 INTERACTIVE DEVELOPMENT FLOW
+            ============================================== -->
+
+            <div
+                class="development-flow-board"
+                id="developmentFlow"
+            >
+
+
+                <div class="flow-board-header">
+
+                    <span>
+                        PRODUCT DELIVERY FLOW
+                    </span>
+
+                    <strong>
+                        FLOW-01
+                    </strong>
+
+                </div>
+
+
+
+                <div class="flow-board-body">
+
+
+                    <div class="flow-rail"></div>
+
+
+
+                    <!-- DISCOVER -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="0"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                01 / INPUT
+                            </span>
+
+                            <span class="flow-name">
+                                Discover
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                Requirements
+                            </span>
+
+                            <span class="flow-chip">
+                                Client goals
+                            </span>
+
+                            <span class="flow-chip">
+                                Existing systems
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- DEFINE -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="1"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                02 / SCOPE
+                            </span>
+
+                            <span class="flow-name">
+                                Define
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                Project scope
+                            </span>
+
+                            <span class="flow-chip">
+                                Priorities
+                            </span>
+
+                            <span class="flow-chip">
+                                Architecture
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- DESIGN -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="2"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                03 / UX
+                            </span>
+
+                            <span class="flow-name">
+                                Design
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                User flow
+                            </span>
+
+                            <span class="flow-chip">
+                                Wireframes
+                            </span>
+
+                            <span class="flow-chip">
+                                Interface
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- BUILD -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="3"
+                        id="buildStage"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                04 / BUILD
+                            </span>
+
+                            <span class="flow-name">
+                                Build
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                Frontend
+                            </span>
+
+                            <span class="flow-chip">
+                                Backend
+                            </span>
+
+                            <span class="flow-chip">
+                                APIs
+                            </span>
+
+                            <span class="flow-chip">
+                                Data
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- TEST -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="4"
+                        id="testStage"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                05 / QA
+                            </span>
+
+                            <span class="flow-name">
+                                Test
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                Functional QA
+                            </span>
+
+                            <span class="flow-chip">
+                                Devices
+                            </span>
+
+                            <span class="flow-chip">
+                                Security
+                            </span>
+
+                            <span class="flow-chip">
+                                Edge cases
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- QA RETURN LOOP -->
+
+                    <div
+                        class="qa-loop"
+                        aria-label="Failed QA returns to build"
+                    >
+
+                        <div class="qa-loop-line"></div>
+
+                        <div class="qa-loop-arrow"></div>
+
+                        <span>
+                            QA FAIL → BUILD
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DEPLOY -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="5"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                06 / RELEASE
+                            </span>
+
+                            <span class="flow-name">
+                                Deploy
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                Production
+                            </span>
+
+                            <span class="flow-chip">
+                                DNS
+                            </span>
+
+                            <span class="flow-chip">
+                                Infrastructure
+                            </span>
+
+                            <span class="flow-chip">
+                                Monitoring
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- IMPROVE -->
+
+                    <div
+                        class="flow-stage"
+                        data-flow-index="6"
+                    >
+
+
+                        <div class="flow-node"></div>
+
+
+                        <div class="flow-stage-heading">
+
+                            <span class="flow-index">
+                                07 / FEEDBACK
+                            </span>
+
+                            <span class="flow-name">
+                                Improve
+                            </span>
+
+                        </div>
+
+
+                        <div class="flow-details">
+
+                            <span class="flow-chip">
+                                Feedback
+                            </span>
+
+                            <span class="flow-chip">
+                                Metrics
+                            </span>
+
+                            <span class="flow-chip">
+                                Maintenance
+                            </span>
+
+                            <span class="flow-chip">
+                                Next release
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <div class="flow-footer">
+
+                    <span>
+                        INPUT
+                        <strong>PROBLEM</strong>
+                    </span>
+
+                    <span>
+                        OUTPUT
+                        <strong>WORKING SOLUTION</strong>
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     GET STARTED
+======================================================= -->
+
+<section
+    class="content-section"
+    id="contact"
+>
+
+
+    <div class="content-inner">
+
+
+        <header class="section-heading">
+
+
+            <div class="section-label">
+                Projects · Support · Consultation
+            </div>
+
+
+            <h2>
+                Build the right solution
+            </h2>
+
+
+            <p>
+
+                Tell us what you are trying to build,
+                improve or solve. You do not need to
+                arrive with every technical detail
+                figured out.
+
+            </p>
+
+
+        </header>
+
+
+
+        <div class="contact-layout">
+
+
+            <div class="contact-copy">
+
+
+                <h3>
+                    What happens next
+                </h3>
+
+
+                <p>
+
+                    Start with the problem, goal or idea.
+                    We can work through the technical
+                    details from there.
+
+                </p>
+
+
+                <div class="contact-steps">
+
+
+                    <div class="contact-step">
+
+                        <span>01</span>
+
+                        <p>
+                            Share the project or problem
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-step">
+
+                        <span>02</span>
+
+                        <p>
+                            Include useful context,
+                            requirements or timing
+                        </p>
+
+                    </div>
+
+
+                    <div class="contact-step">
+
+                        <span>03</span>
+
+                        <p>
+                            We review the request and
+                            determine the next step
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <form
+                class="form-card"
+                action="{% url 'get_started' %}"
+                method="post"
+            >
+
+                {% csrf_token %}
+
+                <input
+                    type="hidden"
+                    name="form_type"
+                    value="get_started"
+                >
+
+
+
+                <div class="form-body">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label>
+                                Full name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="full_name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Business / organization
+                            </label>
+
+                            <input
+                                type="text"
+                                name="organization"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Email address
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Phone number
+                            </label>
+
+                            <input
+                                type="tel"
+                                name="phone"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                What can we help you with
+                            </label>
+
+                            <select
+                                name="service"
+                                required
+                            >
+
+                                <option value="">
+                                    Choose one
+                                </option>
+
+                                <option value="website">
+                                    Website project
+                                </option>
+
+                                <option value="software">
+                                    Custom software
+                                </option>
+
+                                <option value="branding">
+                                    Branding & digital presence
+                                </option>
+
+                                <option value="technical">
+                                    Technical help
+                                </option>
+
+                                <option value="other">
+                                    Something else
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Preferred contact method
+                            </label>
+
+                            <select name="preferred_contact">
+
+                                <option value="">
+                                    Choose one
+                                </option>
+
+                                <option value="email">
+                                    Email
+                                </option>
+
+                                <option value="phone">
+                                    Phone
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Timeline
+                            </label>
+
+                            <input
+                                type="text"
+                                name="timeline"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Budget range
+                            </label>
+
+                            <input
+                                type="text"
+                                name="budget"
+                            >
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Project details / questions
+                            </label>
+
+                            <textarea
+                                name="details"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <button
+                            type="submit"
+                            class="button primary"
+                        >
+                            Submit request
+                        </button>
+
+
+                        <a
+                            href="{% url 'portfolio' %}"
+                            class="button"
+                        >
+                            View portfolio
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =======================================================
+     COLLABORATE
+======================================================= -->
+
+<section
+    class="content-section"
+    id="collaborate"
+>
+
+
+    <div class="content-inner">
+
+
+        <header class="section-heading">
+
+
+
+            <h2>
+                Interested in building technology together?
+            </h2>
+
+
+            <p>
+
+                We are interested in developers,
+                engineers, designers and technical
+                specialists whose skills could fit future
+                Asentrion projects.
+
+            </p>
+
+
+        </header>
+
+
+
+        <!-- =================================================
+             TECHNOLOGY BANNER
+        ================================================== -->
+
+        <div class="brand-banner">
+
+
+            <div class="brand-track">
+
+
+
+                <div class="brand-group">
+
+
+                    <span
+                        class="brand-item"
+                        title="Python"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/python.svg"
+                            alt="Python"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Django"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/django.svg"
+                            alt="Django"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="AWS"
+                    >
+                        <img
+                            class="brand-logo aws"
+                            src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+                            alt="AWS"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Linux"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/linux.svg"
+                            alt="Linux"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Cisco"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/cisco.svg"
+                            alt="Cisco"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="GitHub"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/github.svg"
+                            alt="GitHub"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="JavaScript"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/javascript.svg"
+                            alt="JavaScript"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="PostgreSQL"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/postgresql.svg"
+                            alt="PostgreSQL"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Docker"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/docker.svg"
+                            alt="Docker"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="WordPress"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/wordpress.svg"
+                            alt="WordPress"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Wireshark"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/wireshark.svg"
+                            alt="Wireshark"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Kali Linux"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/kalilinux.svg"
+                            alt="Kali Linux"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Samsung"
+                    >
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/samsung.svg"
+                            alt="Samsung"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Nginx"
+                    >
+                        <img
+                            class="brand-logo nginx"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/nginx.svg"
+                            alt="Nginx"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Java"
+                    >
+                        <img
+                            class="brand-logo java"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                            alt="Java"
+                        >
+                    </span>
+
+
+                    <span
+                        class="brand-item"
+                        title="Apple"
+                    >
+                        <img
+                            class="brand-logo apple"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/apple.svg"
+                            alt="Apple"
+                        >
+                    </span>
+
+
+                </div>
+
+
+
+                <!-- DUPLICATE -->
+
+                <div
+                    class="brand-group"
+                    aria-hidden="true"
+                >
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/python.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/django.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo aws"
+                            src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Amazon_Web_Services_2025.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/linux.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/cisco.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/github.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/javascript.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/postgresql.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/docker.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/wordpress.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/wireshark.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/kalilinux.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/samsung.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo nginx"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/nginx.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo java"
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                    <span class="brand-item">
+                        <img
+                            class="brand-logo apple"
+                            src="https://cdn.jsdelivr.net/npm/simple-icons@16.28.0/icons/apple.svg"
+                            alt=""
+                        >
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="collaborate-layout">
+
+
+            <div class="collaborate-info">
+
+
+                Share your background, technical strengths
+                and examples of your work. We are always
+                interested in meeting people who enjoy
+                building useful technology.
+
+
+                <div class="info-list">
+
+
+                    <div class="info-row">
+
+                        <strong>
+                            Technical focus
+                        </strong>
+
+                        <span>
+
+                            Development, security,
+                            networking, infrastructure,
+                            operations, design or another
+                            technical specialty
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <strong>
+                            Proof of work
+                        </strong>
+
+                        <span>
+
+                            GitHub, portfolio, résumé,
+                            project links or anything that
+                            shows what you can build
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="info-row">
+
+                        <strong>
+                            Collaboration fit
+                        </strong>
+
+                        <span>
+
+                            Tell us what you enjoy working
+                            on and the kinds of projects
+                            that interest you
+
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <form
+                class="form-card"
+                method="post"
+                action="{% url 'collaborate' %}"
+            >
+
+                {% csrf_token %}
+
+                <input
+                    type="hidden"
+                    name="form_type"
+                    value="collaborate"
+                >
+
+
+                <div class="form-header">
+
+                    Work with us
+
+                    <span>
+                        Open
+                    </span>
+
+                </div>
+
+
+                <div class="form-body">
+
+
+                    <div class="form-grid">
+
+
+                        <div class="field">
+
+                            <label>
+                                Full name
+                            </label>
+
+                            <input
+                                type="text"
+                                name="full_name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Email address
+                            </label>
+
+                            <input
+                                type="email"
+                                name="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Phone number
+                            </label>
+
+                            <input
+                                type="tel"
+                                name="phone"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Location
+                            </label>
+
+                            <input
+                                type="text"
+                                name="location"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Current role / title
+                            </label>
+
+                            <input
+                                type="text"
+                                name="current_role"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Experience level
+                            </label>
+
+                            <select name="experience_level">
+
+                                <option value="">
+                                    Select
+                                </option>
+
+                                <option value="student">
+                                    Student / Learning
+                                </option>
+
+                                <option value="junior">
+                                    Early career
+                                </option>
+
+                                <option value="mid">
+                                    Mid-level
+                                </option>
+
+                                <option value="senior">
+                                    Senior
+                                </option>
+
+                                <option value="specialist">
+                                    Specialist / Consultant
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Primary technical focus
+                            </label>
+
+                            <input
+                                type="text"
+                                name="primary_focus"
+                            >
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Areas of interest
+                            </label>
+
+
+                            <div class="checkbox-group">
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="areas_of_interest"
+                                        value="software_engineering"
+                                    >
+
+                                    Software Engineering
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="areas_of_interest"
+                                        value="web_development"
+                                    >
+
+                                    Web Development
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="areas_of_interest"
+                                        value="cybersecurity"
+                                    >
+
+                                    Cybersecurity
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="areas_of_interest"
+                                        value="infrastructure_devops"
+                                    >
+
+                                    Infrastructure / DevOps
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="areas_of_interest"
+                                        value="design"
+                                    >
+
+                                    UI / UX / Design
+
+                                </label>
+
+
+                                <label class="checkbox-option">
+
+                                    <input
+                                        type="checkbox"
+                                        name="areas_of_interest"
+                                        value="technical_support"
+                                    >
+
+                                    Technical Support / Operations
+
+                                </label>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                GitHub / code repository
+                            </label>
+
+                            <input
+                                type="url"
+                                name="github"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Portfolio / website
+                            </label>
+
+                            <input
+                                type="url"
+                                name="portfolio_url"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Résumé link
+                            </label>
+
+                            <input
+                                type="url"
+                                name="resume_url"
+                            >
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Availability
+                            </label>
+
+                            <input
+                                type="text"
+                                name="availability"
+                            >
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Short introduction
+                            </label>
+
+                            <textarea
+                                name="introduction"
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="field full">
+
+                            <label>
+                                Why do you want to collaborate
+                            </label>
+
+                            <textarea
+                                name="collaboration_fit"
+                            ></textarea>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <button
+                            type="submit"
+                            class="button primary"
+                        >
+                            Submit
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =======================================================
+     OUTPUT STAGE
+======================================================= -->
+
+<footer
+    class="output-footer"
+    id="outputStage"
+>
+
+
+    <div class="footer-terminal-line"></div>
+
+
+    <div class="footer-inner">
+
+
+
+        <div class="completion-module">
+
+
+            <div class="terminal-status">
+                SIGNAL COMPLETE
+            </div>
+
+
+        </div>
+
+
+
+        <a
+            href="#home"
+            class="footer-brand"
+        >
+
+            <img
+                src="{% static 'website/images/asentrion-3.png' %}"
+                alt="Asentrion"
+            >
+
+        </a>
+
+
+
+        <!-- SOCIALS -->
+
+        <div class="footer-socials">
+
+
+            <a
+                href="#"
+                aria-label="LinkedIn"
+                title="LinkedIn"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="
+                        M20.45 20.45h-3.56v-5.57
+                        c0-1.33-.03-3.04-1.85-3.04
+                        -1.85 0-2.14 1.45-2.14 2.94
+                        v5.67H9.34V9h3.42v1.56h.05
+                        c.48-.9 1.64-1.85 3.37-1.85
+                        3.6 0 4.27 2.37 4.27 5.46
+                        v6.28z
+
+                        M5.32 7.43
+                        a2.06 2.06 0 1 1 0-4.12
+                        2.06 2.06 0 0 1 0 4.12z
+
+                        M7.1 20.45H3.54V9H7.1v11.45z
+                    "/>
+
+                </svg>
+
+            </a>
+
+
+
+            <a
+                href="#"
+                aria-label="GitHub"
+                title="GitHub"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="
+                        M12 .7
+                        C5.7.7.6 5.8.6 12.1
+                        c0 5 3.3 9.2 7.8 10.7
+                        .6.1.8-.3.8-.6v-2.3
+                        c-3.2.7-3.9-1.4-3.9-1.4
+                        -.5-1.3-1.3-1.7-1.3-1.7
+                        -1.1-.7.1-.7.1-.7
+                        1.2.1 1.8 1.3 1.8 1.3
+                        1.1 1.8 2.8 1.3 3.5 1
+                        .1-.8.4-1.3.8-1.6
+                        -2.6-.3-5.3-1.3-5.3-5.7
+                        0-1.3.4-2.3 1.2-3.1
+                        -.1-.3-.5-1.5.1-3.1
+                        0 0 1-.3 3.2 1.2
+                        a11 11 0 0 1 5.8 0
+                        C17 5 18 5.3 18 5.3
+                        c.6 1.6.2 2.8.1 3.1
+                        .8.8 1.2 1.8 1.2 3.1
+                        0 4.4-2.7 5.4-5.3 5.7
+                        .4.4.8 1.1.8 2.1v3.1
+                        c0 .4.2.7.8.6
+                        4.5-1.5 7.8-5.7 7.8-10.7
+                        C23.4 5.8 18.3.7 12 .7z
+                    "/>
+
+                </svg>
+
+            </a>
+
+
+
+            <a
+                href="#"
+                aria-label="Instagram"
+                title="Instagram"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="
+                        M7 2h10a5 5 0 0 1 5 5v10
+                        a5 5 0 0 1-5 5H7
+                        a5 5 0 0 1-5-5V7
+                        a5 5 0 0 1 5-5zm0 2
+                        a3 3 0 0 0-3 3v10
+                        a3 3 0 0 0 3 3h10
+                        a3 3 0 0 0 3-3V7
+                        a3 3 0 0 0-3-3H7zm10.5 1.5
+                        a1.25 1.25 0 1 1 0 2.5
+                        1.25 1.25 0 0 1 0-2.5z
+                        M12 7a5 5 0 1 1 0 10
+                        5 5 0 0 1 0-10zm0 2
+                        a3 3 0 1 0 0 6
+                        3 3 0 0 0 0-6z
+                    "/>
+
+                </svg>
+
+            </a>
+
+
+
+            <a
+                href="#"
+                aria-label="Facebook"
+                title="Facebook"
+            >
+
+                <svg viewBox="0 0 24 24">
+
+                    <path d="
+                        M13.7 22v-8h2.7
+                        l.4-3.1h-3.1V8.9
+                        c0-.9.3-1.5 1.6-1.5H17V4.6
+                        c-.7-.1-1.5-.2-2.4-.2
+                        -2.4 0-4.1 1.5-4.1 4.2
+                        v2.3H7.8V14h2.7v8h3.2z
+                    "/>
+
+                </svg>
+
+            </a>
+
+
+        </div>
+
+
+
+        <div class="footer-tagline">
+
+            Technology · Design · Innovation
+
+        </div>
+
+        <div class="footer-copyright">
+
+            © 2026 ASENTRION
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<script src="{% static 'website/js/script.js' %}" defer></script>
+<div
+    id="submission-toast"
+    class="submission-toast"
+    role="status"
+    aria-live="polite"
+    aria-hidden="true"
+>
+    <div class="submission-toast-icon">
+        ✓
+    </div>
+
+    <div class="submission-toast-content">
+        <strong>Message sent successfully</strong>
+
+        <span id="submission-toast-description">
+            Your request has been received by Asentrion.
+        </span>
+    </div>
+</div>
+
+<!-- ASENTRION / SUBMISSION SUCCESS HANDLER -->
+<script>
+window.addEventListener("load", () => {
+    const query = new URLSearchParams(window.location.search);
+    const submitted = query.get("submitted");
+
+    if (submitted !== "project" && submitted !== "collaboration") {
+        return;
+    }
+
+    const toast = document.getElementById("submission-toast");
+    const description = document.getElementById("submission-toast-description");
+    if (!toast || !description) {
+        console.error("Asentrion: submission toast markup was not found.");
+        return;
+    }
+
+    description.textContent = submitted === "project"
+        ? "Your project request has been received by Asentrion."
+        : "Your collaboration request has been received by Asentrion.";
+
+    toast.setAttribute("aria-hidden", "false");
+    requestAnimationFrame(() => {
+        toast.classList.add("is-visible");
+    });
+
+    // Clear the marker after showing it, so refreshing won't repeat the notice.
+    // Clearing the hash also prevents a late #contact/#collaborate anchor jump.
+    const cleanUrl = new URL(window.location.href);
+    cleanUrl.searchParams.delete("submitted");
+    cleanUrl.hash = "";
+    window.history.replaceState(
+        window.history.state,
+        "",
+        cleanUrl.pathname + cleanUrl.search
+    );
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    // Smooth, gently eased return to the top after the confirmation appears.
+    function gracefullyReturnToTop() {
+        if (reducedMotion) {
+            window.scrollTo(0, 0);
+            return;
+        }
+
+        const startY = window.scrollY;
+        if (startY <= 0) return;
+
+        const duration = 1500;
+        const start = performance.now();
+
+        function frame(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = (1 - Math.cos(progress * Math.PI)) / 2;
+            window.scrollTo(0, startY * (1 - eased));
+            if (progress < 1) requestAnimationFrame(frame);
+        }
+
+        requestAnimationFrame(frame);
+    }
+
+    setTimeout(gracefullyReturnToTop, 300);
+
+    setTimeout(() => {
+        toast.classList.remove("is-visible");
+        toast.setAttribute("aria-hidden", "true");
+    }, 6500);
+});
+</script>
+</body>
+</html>
